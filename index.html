@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Lam oiii</title>
+    <style>
+        body {
+            height: 97vh;
+        }
+
+        .wrapper {
+            font-family: 'Poppins';
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .action button {
+            position: relative;
+            padding: 12px;
+            font-size: 16px;
+            margin-left: 8px;
+            border: none;
+            min-width: 64px;
+            font-weight: 600;
+            color: #fff;
+            background-color: hsl(344, 90%, 57%);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all .1s ease;
+        }
+
+        .action button:hover {
+            background-color: hsla(344, 90%, 57%, 0.814);
+        }
+
+        .thank {
+            display: none;
+            font-family: 'Poppins';
+            color: hsl(344, 90%, 57%);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+        <h1 class="text">Helii Lam, ban tha loi cho minh nkaa 💗💗💗 </h1>
+        <div class="action">
+            <button class="okay">Ỏooo, cuti vayy, okii</button>
+            <button class="notAllow">thằng mặt l, cútttttt</button>
+        </div>
+    </div>
+    <h1 class="thank">That khong????, minh cam on nha, nho ngu som nhee 💗💗💗</h1>
+
+    <script>
+        const okay = document.querySelector(".okay");
+        const no = document.querySelector(".notAllow");
+        const wrapper = document.querySelector('.wrapper');
+        const thank = document.querySelector('.thank');
+        let notAlOffsetLeft = no.offsetLeft;
+        let notAlOffsetTop = no.offsetTop;
+        let moves = ['up', 'down', 'left', 'right'];
+        let Y = 0, X = 0;
+        no.style.top = Y;
+        no.style.left = X;
+        no.onmouseover = () => {
+            let move = moves[Math.floor(Math.random() * 4)]
+            switch (move) {
+                case 'up':
+                    Y += - 10 - no.clientHeight;
+                    no.style.top = Y + 'px';
+                    break;
+                case 'down':
+                    Y += + 10 + no.clientHeight;
+                    no.style.top = Y + 'px';
+                    break;
+                case 'left':
+                    X += - 10 - no.clientWidth
+                    no.style.left = X + 'px'
+                    break;
+                case 'right':
+                    X += + 10 + no.clientWidth
+                    no.style.left = X + 'px'
+                    break;
+            }
+        }
+        no.onclick = no.onmouseover
+        okay.onclick = () => {
+            wrapper.style.display = 'none'
+            thank.style.display = 'block'
+        }
+
+    </script>
+</body>
+</html>
