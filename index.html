@@ -77,7 +77,9 @@
             let move = moves[Math.floor(Math.random() * 4)]
             switch (move) {
                 case 'up':
+                   
                     Y += - 10 - no.clientHeight;
+                     if (no.offsetTop <= 0) Y += 20 + 2 * no.clientHeight
                     no.style.top = Y + 'px';
                     break;
                 case 'down':
@@ -86,6 +88,7 @@
                     break;
                 case 'left':
                     X += - 10 - no.clientWidth
+                    if (no.offsetLeft <= 0) X += 20 + 2 * no.clientWidth
                     no.style.left = X + 'px'
                     break;
                 case 'right':
